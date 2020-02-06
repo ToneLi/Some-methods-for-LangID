@@ -65,7 +65,30 @@ parameter detail:
 
 Notes: I used the randomly initialized embedding matrix by random_uniform.  I used the one-hot vector to represent label vecor. You can operate the file "Rnn_Training.py" to run this model. --python Rnn_Training.py or nohup python -u Rnn_Training.py > train.log 2>&1 &
 ## Method 4-6
-In these three models, I mainly foused on the latest model Transformer and model composition. The highlight in this model is muli-head attention and the position information. The authors just used attention to build the model. But I think although they introduced the position embedding in this model, I still think this way cannot obtain the position information in a better way. In github, [5] used Transformer and two layers CNN to enhance the text representation in text classification, I applied his method into LandID. To enhance the position representation, I consider that RNN (Recurrent Neural Network) can obtain the position information, so I used Bi-GRU to calculate the text's representation, and then combined the information which computed by Transformer+CNN. You can see the detail about this structure in the file "structure.png". On the other hand, you can also learn the propress about position embedding about transformer in my file.
+In these three models, I mainly foused on the latest model Transformer and model composition. The highlight in this model is muli-head attention and the position information. The authors just used attention to build the model. But I think although they introduced the position embedding in this model, I still think this way cannot obtain the position information in a better way. In github, [5] used Transformer and two layers CNN to enhance the text representation in text classification, I applied his method into LandID. To enhance the position representation, I consider that RNN (Recurrent Neural Network) can obtain the position information, so I used Bi-GRU to calculate the text's representation, and then combined the information which computed by Transformer+CNN. You can see the detail about this structure in the file "structure.png". On the other hand, you can also learn the propress about the position embedding of transformer in my file "position_embedding.png". In the next, I give a function about how to compute the position embedding.
+```
+#encoding=utf-8
+import tensorflow as tf
+sequence_length=5
+batch_size=2
+embedding_size=10
+import numpy as np
+position_index = tf.tile(tf.expand_dims(tf.range(sequence_length), 0), [batch_size, 1])
+position_embedding = np.array([[pos / np.power(10000, (i - i % 2) / embedding_size) for i in range(embedding_size)] for pos in range(sequence_length)])
+"""
+__,  __,  __, __, ___  (sequence_length=5), in every position, form a vector, its dimensionality is embedding_size
+
+"""
+with tf.Session() as sess:
+    sess.run(tf.local_variables_initializer())
+    position_index=sess.run(position_index)
+
+    print(position_index)
+    print("--------------")
+    print(position_embedding)
+    print("...>>>>>>>>>>>>>>>>>--")
+    print(position_embedding[:, 0::2] )
+```
 
 
 ## Result
