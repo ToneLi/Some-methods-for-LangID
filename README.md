@@ -9,7 +9,7 @@ Language identiﬁcation (LangID) is the task of determining the language(s) tha
 * 2: Bayes+TF-IDF [4]
 * 3: Bi-GRU and attention [3]
 * 4: Transformer [1]
-* 5: Transformer+CNN
+* 5: Transformer+CNN [5]
 * 6: Transformer+CNN+BiGRU
 ## Enviroment
 * Python 3.6.4 
@@ -65,6 +65,8 @@ parameter detail:
 
 Notes: I used the randomly initialized embedding matrix by random_uniform.  I used the one-hot vector to represent label vecor. You can operate the file "Rnn_Training.py" to run this model. --python Rnn_Training.py or nohup python -u Rnn_Training.py > train.log 2>&1 &
 ## Method 4-6
+In these three models, I mainly foused on the latest model Transformer and model composition. The highlight in this model is muli-head attention and the position information. The authors just used attention to build the model. But I think although they introduced the position embedding in this model, I still think this way cannot obtain the position information in a better way. In github, [5] used Transformer and two layers CNN to enhance the text representation in text classification, I applied his method into LandID. To enhance the position representation, I consider that RNN (Recurrent Neural Network) can obtain the position information, so I used Bi-GRU to calculate the text's representation, and then combined the information which computed by Transformer+CNN. You can see the detail about this structure in the file "structure.png". On the other hand, you can also learn the propress about position embedding about transformer in my file.
+
 
 ## Result
 | Model | Accuracy|
@@ -88,3 +90,5 @@ I would like to thank Prof.Zili Zhou and QFNU for their equipment support.
 3: Zhou, Peng, et al. "Attention-based bidirectional long short-term memory networks for relation classification." Proceedings of the 54th annual meeting of the association for computational linguistics (volume 2: Short papers). 2016. [link](https://www.aclweb.org/anthology/P16-2034.pdf)
 
 4: Kononenko, Igor. "Semi-naive Bayesian classifier." European Working Session on Learning. Springer, Berlin, Heidelberg, 1991. [link](https://link.springer.com/chapter/10.1007/BFb0017015)
+
+5: [jiangxinyang227/NLP-Project](https://github.com/jiangxinyang227/NLP-Project/tree/master/text_classifier)
