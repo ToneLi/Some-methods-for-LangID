@@ -23,7 +23,7 @@ WiLI-2018, the Wikipedia language identification benchmark dataset, contains 235
 [BaiDuYu](https://pan.baidu.com/s/13atqh9mWsQIROgH2MIO8IQ) code is "wkdc"
 
 ## words or characters
-There are 235 languages in WiLI-2018,  the first step about research is to explore the feather about these 235 languages. In NLP, there are several semantic segment styles (word, character, semantic unit which is obtain by searching the knowledge graph, or, lattice). Every language has its own feature, such as Chinese. So this is an challenging task. In this work, I first try to use character feature.
+There are 235 languages in WiLI-2018,  the first step about research is to explore the feather about these 235 languages. In NLP, there are several semantic segment styles (word, character, semantic unit which is obtain by searching the knowledge graph, or, lattice). Every language has its own feature, such as Chinese. So this is an challenging task. In this work, I first try to use character feature. Of course, it's also necessary to use the stopword to filter the text.
 
 ## the sentence length
 After the character segmentation, the max length of all paragraphs is 191974, but, by calculating, 97.31% paragraph is less than 700, so I chose 700 as the max length of paragraph.
