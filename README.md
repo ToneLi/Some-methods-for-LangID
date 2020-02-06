@@ -96,10 +96,11 @@ with tf.Session() as sess:
 | ------ | ------ |
 | Bayes+TF-IDF| 0.8572 |
 | Bi-GRU and attention| 0.8069 |
-| Transformer| -- |
-| Transformer+CNN| -- |
-|Transformer+CNN+BiGRU| -- |
+| Transformer| 0.8343|
+| Transformer+CNN| 0.8354 |
+|Transformer+CNN+BiGRU| 0.8422 |
 
+I am suprised that the transformer have a lower performance than Bayes. May be there are some wrong things when I tuned the model. But, I found that it is feasible to combine Bi-GRU, CNN and transformer.
 ## Future Work
 
 ## Acknowledgement
