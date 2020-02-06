@@ -45,7 +45,7 @@ But we should condider do not use an existing library to solve this task.
 ## Methods 2
 This is the standard baseline. In this model, TF-IDF which based on Bags of Words is used for LangID, I used Bayes as a classifier. This baseline was implemented by scikit-learn. My relevent code and result is in the file M2-Bayes. just run the file: detect_language.py.
 ## Methods 3
-This model is build by Bi-GRU and the attention mechanism. This attention mechanism is same as the one which in my paper[2]. My relevent code and result is in the file 2_Bi_RNN_attention. 
+This model is build by Bi-GRU and the attention mechanism. This attention mechanism is same as the one which in my paper[2]. My relevent code and result is in the file M3-BiGRU+attention. 
 parameter detail:
 
 * word_embedding_dim = 300      #dimension of word embedding
@@ -63,9 +63,9 @@ parameter detail:
 * num_epochs = 1               #epochs
 * batch_size = 8               #batch_size
 
-Notes: I used the randomly initialized embedding matrix by random_uniform.  I used the one-hot vector to represent label vecor. You can operate the file "Rnn_Training.py" to run this model. --python Rnn_Training.py or nohup python -u Rnn_Training.py > train.log 2>&1 &
+Notes: I used the randomly initialized embedding matrix by random_uniform, and used the one-hot vector to represent label vecor. You can operate the file "Rnn_Training.py" to run this model. --python Rnn_Training.py or nohup python -u Rnn_Training.py > train.log 2>&1 &
 ## Method 4-6
-In these three models, I mainly foused on the latest model Transformer and model composition. The highlight in this model is muli-head attention and the position information. The authors just used attention to build the model. But I think although they introduced the position embedding in this model, I still think this way cannot obtain the position information in a better way. In github, [5] used Transformer and two layers CNN to enhance the text representation in text classification, I applied his method into LandID. To enhance the position representation, I consider that RNN (Recurrent Neural Network) can obtain the position information, so I used Bi-GRU to calculate the text's representation, and then combined the information which computed by Transformer+CNN. You can see the detail about this structure in the file "structure.png". On the other hand, you can also learn the propress about the position embedding of transformer in my file "position_embedding.png". In the next, I give a function about how to compute the position embedding.
+In these three models, I mainly foused on the latest model Transformer and model composition. The highlight in this model is muli-head attention and the position information. The authors just used attention to build the model. But I think although they introduced the position embedding in this model, I still think this way cannot obtain the position information in a better way. In github, [5] used Transformer and two layers CNN to enhance the text representation for text classification, I applied his method in LandID. To enhance the position representation, I consider that RNN (Recurrent Neural Network) can also obtain the position information, what would happen if they combined? So I used Bi-GRU to calculate the text's representation, and then combined the information which computed by Transformer+CNN. You can see the detail about this structure in the file "structure.png". On the other hand, you can also learn the propress about the position embedding of transformer in my file "position_embedding.png". In the next, I give a function about how to compute the position embedding.
 ```
 #encoding=utf-8
 import tensorflow as tf
