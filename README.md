@@ -43,9 +43,9 @@ print (result)
 ```
 But we should condider do not use an existing library to solve this task.
 ## Methods 2
-This is a standard baseline. In this model, TF-IDF which based on Bags of Words is used for LangID, I used Bayes as a classifier. This baseline was implemented by scikit-learn. My relevent code and results is in the file M2-Bayes, just run the file: detect_language.py.
+This is a standard baseline. In this model, TF-IDF which based on Bags of Words is used for LangID, I used Bayes as a classifier. This baseline was implemented by scikit-learn. My relevent code and results are in the file M2-Bayes, just run the file: detect_language.py.
 ## Methods 3
-This model is build by Bi-GRU and the attention mechanism. This attention mechanism is same as the one which in my paper[2]. My relevent code and result is in the file M3-BiGRU+attention. 
+This model is built by Bi-GRU and the attention mechanism. This attention mechanism is same as the one which in my paper[2]. My relevent code and results are in the file M3-BiGRU+attention. 
 parameter detail:
 
 * word_embedding_dim = 300      #dimension of word embedding
