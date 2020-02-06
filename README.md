@@ -63,7 +63,7 @@ parameter detail:
 * num_epochs = 1               #epochs
 * batch_size = 8               #batch_size
 
-Notes: I used the randomly initialized embedding matrix by random_uniform.  I used the one-hot vector to represent label vecor.
+Notes: I used the randomly initialized embedding matrix by random_uniform.  I used the one-hot vector to represent label vecor. You can operate the file "Rnn_Training.py" to run this model. --python Rnn_Training.py or nohup python -u Rnn_Training.py > train.log 2>&1 &
 ## Method 4-6
 
 ## Result
