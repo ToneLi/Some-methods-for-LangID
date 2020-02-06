@@ -63,7 +63,7 @@ parameter detail:
 * num_epochs = 1               #epochs
 * batch_size = 8               #batch_size
 
-Notes: I used the randomly initialized embedding matrix by random_uniform.  
+Notes: I used the randomly initialized embedding matrix by random_uniform.  I used the one-hot vector to represent label vecor.
 ## Method 4-6
 
 ## Result
