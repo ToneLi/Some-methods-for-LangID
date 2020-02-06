@@ -1,0 +1,48 @@
+nohup: ignoring input
+/home/zzl/anaconda3/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Loading data...
+WARNING:tensorflow:From predict.py:27: VocabularyProcessor.__init__ (from tensorflow.contrib.learn.python.learn.preprocessing.text) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use tensorflow/transform or tf.data.
+WARNING:tensorflow:From /home/zzl/anaconda3/lib/python3.6/site-packages/tensorflow/contrib/learn/python/learn/preprocessing/text.py:154: CategoricalVocabulary.__init__ (from tensorflow.contrib.learn.python.learn.preprocessing.categorical_vocabulary) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use tensorflow/transform or tf.data.
+WARNING:tensorflow:From /home/zzl/anaconda3/lib/python3.6/site-packages/tensorflow/contrib/learn/python/learn/preprocessing/text.py:170: tokenizer (from tensorflow.contrib.learn.python.learn.preprocessing.text) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use tensorflow/transform or tf.data.
+WARNING:tensorflow:From /home/zzl/anaconda3/lib/python3.6/site-packages/tensorflow/python/ops/rnn.py:430: calling reverse_sequence (from tensorflow.python.ops.array_ops) with seq_dim is deprecated and will be removed in a future version.
+Instructions for updating:
+seq_dim is deprecated, use seq_axis instead
+WARNING:tensorflow:From /home/zzl/anaconda3/lib/python3.6/site-packages/tensorflow/python/util/deprecation.py:454: calling reverse_sequence (from tensorflow.python.ops.array_ops) with batch_dim is deprecated and will be removed in a future version.
+Instructions for updating:
+batch_dim is deprecated, use batch_axis instead
+WARNING:tensorflow:From /home/zzl/LI/LD/2_RNN_attention/Rnn_Attention.py:92: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See @{tf.nn.softmax_cross_entropy_with_logits_v2}.
+
+Loading data...
+2020-02-03 07:30:22.950738: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2020-02-03 07:30:23.376636: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1405] Found device 0 with properties: 
+name: Tesla P100-PCIE-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:3b:00.0
+totalMemory: 15.89GiB freeMemory: 14.68GiB
+2020-02-03 07:30:23.802625: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1405] Found device 1 with properties: 
+name: Tesla P100-PCIE-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:af:00.0
+totalMemory: 15.89GiB freeMemory: 15.60GiB
+2020-02-03 07:30:23.804108: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1484] Adding visible gpu devices: 0, 1
+2020-02-03 07:30:24.308152: I tensorflow/core/common_runtime/gpu/gpu_device.cc:965] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-02-03 07:30:24.308208: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971]      0 1 
+2020-02-03 07:30:24.308216: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] 0:   N Y 
+2020-02-03 07:30:24.308222: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] 1:   Y N 
+2020-02-03 07:30:24.308792: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1097] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 14223 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:3b:00.0, compute capability: 6.0)
+2020-02-03 07:30:24.554472: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1097] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15119 MB memory) -> physical GPU (device: 1, name: Tesla P100-PCIE-16GB, pci bus id: 0000:af:00.0, compute capability: 6.0)
+accuracy: 0.80695015
+棰勬祴鍓?0椤癸細 [ 1 7 7 ,   2 1 4 ,   1 7 3 ,   1 ,   2 0 2 ,   1 2 2 ,   8 2 ,   2 1 2 ,   1 2 8 ,   1 6 3 ]
+姝ｇ‘鍓?0椤癸細 [ 1 7 5   2 1 4   1 7 3       1   2 0 2   1 2 2     8 2   2 1 2   1 2 8   1 6 3 ]
+the run time is 1258
