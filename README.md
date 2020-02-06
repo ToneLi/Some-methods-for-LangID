@@ -23,10 +23,10 @@ WiLI-2018, the Wikipedia language identification benchmark dataset, contains 235
 [BaiDuYu](https://pan.baidu.com/s/13atqh9mWsQIROgH2MIO8IQ) code is "wkdc"
 
 ## words or characters
-There are 235 languages in WiLI-2018,  the first step about research is to explore the feather about these 235 languages. In NLP, there are several semantic segment styles (word, character, semantic unit which is obtain by searching the knowledge graph, or, lattice). Every language has its own feature, such as Chinese. So this is a challenging task. In this work, I try to use character feature. Of course, it's also necessary to use the stopwords to filter the text.
+There are 235 languages in WiLI-2018,  the first step about research is to explore the feather about these 235 languages. In NLP, there are several semantic segment styles (word, character, semantic unit which is obtained by searching the knowledge graph, or, lattice). Every language has its own feature, such as Chinese. So this is a challenging task. In this work, I try to use character feature. Of course, it's also necessary to use the stopwords to filter the text.
 
 ## the sentence length
-After the character segmentation, the max length of all paragraphs is 191974, but, by calculating, 97.31% paragraph is less than 700, so I chose 700 as the max length of paragraph.
+After the character segmentation, the max length of all paragraphs is 191974, but, by calculating, 97.31% paragraph is less than 700, so I chose 700 as the max length of paragraphs.
 
 ## Methods 1
 You just need to: pip install langid in your cmd, and then:
@@ -41,11 +41,11 @@ print (result)
 
 #result:('zh', -17.446399450302124)
 ```
-But we should condider do not use an existing library to solve this task.
+But we should consider do not use an existing library to solve this task.
 ## Methods 2
 This is a standard baseline. In this model, TF-IDF which based on Bags of Words is used for LangID, I used Bayes as a classifier. This baseline was implemented by scikit-learn. My relevent code and results are in the file M2-Bayes, just run the file: detect_language.py.
 ## Methods 3
-This model is built by Bi-GRU and the attention mechanism. This attention mechanism is same as the one which in my paper[2]. My relevent code and results are in the file M3-BiGRU+attention. 
+This model is built by Bi-GRU and the attention mechanism. This attention mechanism is same as the one which in my paper[2]. My relevant code and results are in the file M3-BiGRU+attention. 
 parameter detail:
 
 * word_embedding_dim = 300      #dimension of word embedding
@@ -63,9 +63,9 @@ parameter detail:
 * num_epochs = 1               #epochs
 * batch_size = 8               #batch_size
 
-Notes: I used the randomly initialized embedding matrix by random_uniform, and used the one-hot vector to represent label vecor. You can operate the file "Rnn_Training.py" to run this model. --python Rnn_Training.py or nohup python -u Rnn_Training.py > train.log 2>&1 &
+Notes: I used the randomly initialized embedding matrix by random_uniform, and used the one-hot vector to represent label vector. You can operate the file "Rnn_Training.py" to run this model. --python Rnn_Training.py or nohup python -u Rnn_Training.py > train.log 2>&1 &
 ## Method 4-6
-In these three models, I mainly foused on the latest model Transformer and model composition. The highlight in this model is muli-head attention and the position information. The authors just used attention to build the model. I think although they introduced the position embedding in this model, their way cannot obtain the position information in a better way. In github, [5] used Transformer and two layers CNN to enhance the text representation for text classification, I applied his method in LandID. To enhance the position representation, I consider that RNN (Recurrent Neural Network) can also obtain the position information, what would happen if they combined? So I used Bi-GRU to calculate the text's representation, and then combined the information which computed by Transformer+CNN. You can see the detail about this structure in the file "structure.png". On the other hand, you can also learn the propress about the position embedding of transformer in my file "position_embedding.png". In the next, I will give a function about how to compute the position embedding.
+In these three models, I mainly focused on the latest model Transformer and model composition. The highlight in this model is muli-head attention and the position information. The authors just used attention to build the model. I think although they introduced the position embedding in this model, their way cannot obtain the position information in a better way. In github, [5] used Transformer and two layers CNN to enhance the text representation for text classification, I applied his method in LandID. To enhance the position representation, I consider that RNN (Recurrent Neural Network) can also obtain the position information, what would happen if they combined? So I used Bi-GRU to calculate the text's representation, and then combined the information which computed by Transformer+CNN. You can see the detail about this structure in the file "structure.png". On the other hand, you can also learn the propress about the position embedding of transformer in my file "position_embedding.png". In the next, I will give a function about how to compute the position embedding.
 ```
 #encoding=utf-8
 import tensorflow as tf
@@ -100,7 +100,7 @@ with tf.Session() as sess:
 | Transformer+CNN| 0.8354 |
 |Transformer+CNN+BiGRU| 0.8422 |
 
-I am suprised that the transformer have a lower performance than Bayes. Maybe there are somethings wrong when I tuned the model, maybe the transformer model is suitable for a bigger dataset. But, I found that it is feasible to combine Bi-GRU, CNN and transformer.
+I am suprised that the transformer have a lower performance than Bayes. Maybe there is something wrong when I tuned the model. Maybe the transformer model is suitable for a bigger dataset. But, I found that it is feasible to combine Bi-GRU, CNN and transformer.
 ## Future Work
 I need to continue to optimize this model.
 ## Acknowledgement
