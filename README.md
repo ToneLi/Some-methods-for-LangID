@@ -1,5 +1,5 @@
 # Some-methods-for-LangID
-There is a test from a Lab：to implement a method to identify the language a document is written in.
+This is a test from a Lab：to implement a method to identify the language a document is written in.
 
 ## What's LangID?
 Language identiﬁcation (LangID) is a task of determining the language(s) that a text is written in. Such as text "杭州西湖是个美丽的地方", its language is Chinese.
