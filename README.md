@@ -100,7 +100,7 @@ with tf.Session() as sess:
 | Transformer+CNN| 0.8354 |
 |Transformer+CNN+BiGRU| 0.8422 |
 
-I am suprised that the transformer have a lower performance than Bayes. Maybe there is something wrong when I tuned the model. Maybe the transformer model is suitable for a bigger dataset. But, I found that it is feasible to combine Bi-GRU, CNN and transformer.
+I am suprised that the transformer has a lower performance than Bayes. Maybe there is something wrong when I tuned the model. Maybe the transformer is suitable for a bigger dataset. But, I found that it is feasible to combine Bi-GRU, CNN and transformer.
 ## Future Work
 I need to continue to optimize this model.
 ## Acknowledgement
