@@ -26,7 +26,7 @@ WiLI-2018, the Wikipedia language identification benchmark dataset, contains 235
 There are 235 languages in WiLI-2018,  the first step about research is to explore the feather about these 235 languages. In NLP, there are several semantic segment styles (word, character, semantic unit which is obtained by searching the knowledge graph, or, lattice). Every language has its own feature, such as Chinese. So this is a challenging task. In this work, I try to use character feature. Of course, it's also necessary to use the stopwords to filter the text.
 
 ## the sentence length
-After the character segmentation, the max length of all paragraphs is 191974, but, by calculating, 97.31% paragraph is less than 700, so I chose 700 as the max length of paragraphs.
+After the character segmentation, the max length of all paragraphs is 191974, but, by calculating, 97.31% paragraphs are less than 700, so I chose 700 as the max length of paragraphs.
 
 ## Methods 1
 You just need to: pip install langid in your cmd, and then:
@@ -43,9 +43,9 @@ print (result)
 ```
 But we should consider do not use an existing library to solve this task.
 ## Methods 2
-This is a standard baseline. In this model, TF-IDF which based on Bags of Words is used for LangID, I used Bayes as a classifier. This baseline was implemented by scikit-learn. My relevent code and results are in the file M2-Bayes, just run the file: detect_language.py.
+This is a standard baseline. In this model, TF-IDF which based on Bags of Words is used for LangID, I used Bayes as classifier. This baseline was implemented by scikit-learn. My relevent code and results are in the folder M2-Bayes, just run the file: detect_language.py.
 ## Methods 3
-This model is built by Bi-GRU and the attention mechanism. This attention mechanism is same as the one which in my paper[2]. My relevant code and results are in the file M3-BiGRU+attention. 
+This model is built by Bi-GRU and the attention mechanism. This attention mechanism is same as the one which in my paper[2]. My relevant code and results are in the folder M3-BiGRU+attention. 
 parameter detail:
 
 * word_embedding_dim = 300      #dimension of word embedding
