@@ -19,7 +19,7 @@ Language identiﬁcation (LangID) is a task of determining the language(s) that 
 * Ubuntu 16.04.5 LTS
 
 ## Corpus
-WiLI-2018, the Wikipedia language identification benchmark dataset, contains 235000 paragraphs of 235 languages. The dataset is balanced and a train-test split is provided. In WiLI-2018, the author states: it contains 235000 paragraphs. But it contains duplicated data, duplicated data can influence the result.  In fact, it contains 229095 paragraphs. I randomly divide the data: 90% train, 10% test. Train data: 206185. testdata:22910.[data link](https://zenodo.org/record/841984#collapseCitations). You can gain the processed data by
+WiLI-2018, the Wikipedia language identification benchmark dataset, contains 235000 paragraphs of 235 languages. The dataset is balanced and a train-test split is provided. In WiLI-2018, the author states: it contains 235000 paragraphs. But it contains duplicated data, duplicated data can influence the result.  In fact, it contains 229095 paragraphs. I randomly divided the data: 90% train, 10% test. Train data: 206185. testdata:22910.[data link](https://zenodo.org/record/841984#collapseCitations). You can gain the processed data by
 [BaiDuYu](https://pan.baidu.com/s/13atqh9mWsQIROgH2MIO8IQ) code is "wkdc"
 
 ## words or characters
