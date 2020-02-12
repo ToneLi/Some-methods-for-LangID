@@ -1,5 +1,5 @@
 # Some-methods-for-LangID
-This is a test from a Lab：to implement a method to identify the language a document is written in.
+To implement a method to identify the language a document is written in.
 
 ## What's LangID?
 Language identiﬁcation (LangID) is a task of determining the language(s) that a text is written in. Such as text "杭州西湖是个美丽的地方", its language is Chinese.
@@ -109,7 +109,7 @@ I would like to thank Prof.Zili Zhou and QFNU for their equipment support.
 ## Reference
 1: Vaswani, Ashish, et al. "Attention is all you need." Advances in neural information processing systems. 2017 [link](http://papers.nips.cc/paper/7181-attention-is-all-you-need)
 
-2：Mingchen Li, Gabtone Clinton, Yi jiaMiao, Feng Gao. Short Text Classiﬁcation via Knowledge powered Attention with Similarity Matrix based CNN, 2019
+2：Mingchen Li, Gabtone Clinton, Yi jiaMiao, Feng Gao. Short Text Classiﬁcation via Knowledge powered Attention with Similarity Matrix based CNN, 2019[link](https://arxiv.org/abs/2002.03350)
 
 3: Zhou, Peng, et al. "Attention-based bidirectional long short-term memory networks for relation classification." Proceedings of the 54th annual meeting of the association for computational linguistics (volume 2: Short papers). 2016. [link](https://www.aclweb.org/anthology/P16-2034.pdf)
 
