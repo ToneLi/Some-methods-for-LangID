@@ -103,8 +103,6 @@ with tf.Session() as sess:
 I am suprised that the transformer has a lower performance than Bayes. Maybe there is something wrong when I tuned the model. Maybe the transformer is suitable for a bigger dataset. But, I found that it is feasible to combine Bi-GRU, CNN and transformer.
 ## Future Work
 I need to continue to optimize this model.
-## Acknowledgement
-I would like to thank Prof.Zili Zhou and QFNU for their equipment support.
 
 ## Reference
 1: Vaswani, Ashish, et al. "Attention is all you need." Advances in neural information processing systems. 2017 [link](http://papers.nips.cc/paper/7181-attention-is-all-you-need)
